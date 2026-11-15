@@ -1,0 +1,19 @@
+---
+title: "Python API 참조"
+description: "S100 클라이언트와 주요 API 메서드"
+---
+
+> **개발자 프리뷰 / 하드웨어 미검증:** S100의 ROS 통합 및 물리적 동작은 대상 장치에서 검증되지 않았습니다. 로컬 테스트나 프로필 이름만으로 하드웨어 호환성을 확인할 수 없습니다.
+
+초기화되어 있고 호출자가 소유한 ROS 노드를 전달하여 `S100Client.from_ros(node, namespace="", profile=Profile.S100_BASE)`로 클라이언트를 생성합니다. 구독 사용 중에는 노드를 Spin 하고 노드를 제거하기 전에 클라이언트를 종료하세요.
+
+| 인터페이스 | 주요 메서드 | 용도 |
+| --- | --- | --- |
+| `S100Client` | `discover()`, `discover_services()` | 그래프 조사 |
+| `sdk.conversation` | `send_text()`, `subscribe_text()`, `subscribe_status()` | 대화 게시 또는 관찰 |
+| `sdk.touch` | `discovery()`, `subscribe()` | 터치 이벤트 관찰 및 정규화 |
+| `sdk.rf433` | `discovery()`, `subscribe()`, `subscribe_status()` | 수신기 이벤트와 상태 관찰 |
+| `sdk` | `subscribe_picture(callback, preview=False)` | 호환 이미지 스트림 구독 |
+| `sdk.head`, `sdk.eyes`, `sdk.mouth` | `discovery()` | 컨트롤러 관련 인터페이스 조사 |
+
+구독 메서드는 취소 함수를 반환합니다. 게시 자체는 전달 확인이 아닙니다. 세션 작업에는 별도로 Spin 중인 Executor가 필요합니다. 기다리는 동안 타임아웃이 발생해도 원격 서비스가 계속 실행될 수 있으므로 재시도 전에 장치 상태를 확인하세요. [예제](/ko/xiaoling-s100/v1/examples)를 참조하세요.

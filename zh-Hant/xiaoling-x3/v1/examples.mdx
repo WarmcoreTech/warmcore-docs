@@ -1,0 +1,26 @@
+---
+title: "範例"
+description: "選擇安全的第一個 X3 SDK 實驗"
+---
+
+> **開發者預覽版／硬體尚未驗證：** X3 硬體與已部署的機器人執行環境尚未完成驗證。本機測試不能證明裝置相容性、實體行為或操作安全性。
+
+## 唯讀驗收檢查
+
+請在已授權的 SDK 目錄，使用操作人員確認的 Namespace：
+
+```bash
+python3 examples/x3_acceptance.py --ros --namespace robot --wait 5
+```
+
+若有核准的 WebSocket 端點，先安裝選用的用戶端相依套件，再執行：
+
+```bash
+python examples/x3_acceptance.py --websocket ws://ROBOT_HOST:9090 --wait 30
+```
+
+將 `ROBOT_HOST` 替換為操作人員提供的端點。WebSocket 報告只統計觀察到的事件，不保存事件文字。裝置閒置時，在觀察期間可能完全沒有事件；缺少事件本身不代表機器人故障。絕對不要將端點暴露至公用網際網路。
+
+## 僅在工作站執行的文字功能
+
+文字模型範例見[音訊與 LLM 整合](/zh-Hant/xiaoling-x3/v1/audio-llm)。本機產生文字回應，不代表已完成機器人整合。

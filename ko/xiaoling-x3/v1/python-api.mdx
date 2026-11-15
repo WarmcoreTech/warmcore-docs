@@ -1,0 +1,29 @@
+---
+title: "Python API 참조"
+description: "X3 프리뷰의 Python 인터페이스와 제약 사항"
+---
+
+> **개발자 프리뷰 / 하드웨어 미검증:** X3 하드웨어와 실제 로봇에 배포된 실행 환경은 아직 검증되지 않았습니다. 로컬 테스트만으로 장치 호환성, 물리적 동작 또는 안전한 운용을 보장할 수 없습니다.
+
+## `XiaolingClient`
+
+ROS 클라이언트는 상태와 텍스트 결과를 위한 콜백을 제공합니다. 콜백이 실행되려면 노드를 Spin 해야 합니다. 다음 읽기 전용 예제는 데이터를 로컬에 출력합니다. 대화 데이터에는 개인정보가 포함될 수 있으므로 적절한 정책 없이 공유 로그에 남기지 마세요.
+
+```python
+import rclpy
+from warmcore_xiaoling import XiaolingClient
+
+rclpy.init()
+node = XiaolingClient(on_status=print, on_text_result=print)
+try:
+    rclpy.spin(node)
+finally:
+    node.destroy_node()
+    rclpy.shutdown()
+```
+
+`namespace`는 클라이언트 네임스페이스를 선택하며 배포 환경의 이름 및 리매핑과 일치해야 합니다. `send_text(text)`는 비어 있지 않은 문자열을 게시하고 즉시 반환하며 전달을 확인하지 않습니다. `text_subscriber_count()`는 발견된 구독자 정보를 제공할 뿐 전달 증명은 아닙니다. `start_session(timeout_sec=5.0)` 및 `stop_session(timeout_sec=5.0)`은 서비스를 기다린 뒤 비동기 Future를 반환합니다. 노드를 Spin 하고 별도의 응답 제한 시간을 적용하며 결과를 확인하세요. 세션 및 텍스트 작업은 로봇에 영향을 줄 수 있어 운영자 승인이 필요합니다.
+
+## 읽기 전용 WebSocket 클라이언트
+
+`warmcore_xiaoling.rosbridge.XiaolingRosbridgeClient`는 연결, 대화 상태와 텍스트 결과 이벤트 구독, 수신 및 종료를 지원합니다. 클라이언트의 허용 목록은 서버 보안 기능이 아닙니다. 실제 배포된 전송 경로와 이벤트는 아직 검증되지 않았습니다. 진단 절차는 [예제](/ko/xiaoling-x3/v1/examples)를 참조하세요.

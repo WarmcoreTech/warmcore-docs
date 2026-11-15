@@ -1,0 +1,10 @@
+---
+title: "视觉与追踪"
+description: "S100 图像订阅与跟随状态监听"
+---
+
+> **开发者预览版／硬件尚未验证：** S100 的 ROS 集成与物理行为尚未在目标设备验证。本机测试及产品配置文件标签不能证明硬件兼容性。
+
+`S100Client.subscribe_picture(callback, preview=False)` 支持兼容的原生图像订阅。当有相符的 Publisher 时，`sdk.head.subscribe_follow(callback)` 可观察跟随状态数据。这两个 API 都不能证明特定机器已安装相机，或具备正常的追踪功能。
+
+请在已部署的 ROS 节点图中确认实际图像类型、Topic、QoS 与激活中的视觉路径。图像与预览编码方式可能因部署而异。请将相机数据视为敏感信息，在使用前验证处理方式及权限。

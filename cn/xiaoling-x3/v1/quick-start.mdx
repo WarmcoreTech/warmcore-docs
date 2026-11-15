@@ -1,0 +1,24 @@
+---
+title: "快速入门"
+description: "准备安全的 X3 SDK 评估环境"
+---
+
+> **开发者预览版／硬件尚未验证：** X3 硬件与已部署的机器人运行环境尚未完成验证。本机测试不能证明设备兼容性、物理行为或操作安全性。
+
+## 开始之前
+
+取得已授权的 SDK 项目副本并确认版本，准备操作人员核准的工作站与隔离网络。进行 ROS 探索前，请向操作人员确认兼容的 ROS 环境、Domain、Middleware 与 Namespace。不要变更机器人软件。
+
+## 观察 ROS 节点图
+
+在工作站加载与机器人兼容的 ROS 环境，依[安装说明](/cn/xiaoling-x3/v1/installation)安装 SDK，再从已授权的项目目录运行：
+
+```bash
+python3 examples/x3_acceptance.py --ros --namespace robot --wait 5
+```
+
+将 `robot` 换成操作人员确认的 Namespace；使用根 Namespace 时则省略 `--namespace`。报告描述观察到的接口；仅完成探索并不代表消息能成功发送或设备操作安全。
+
+## 判读结果
+
+结束代码 `0` 表示所选观察项目符合条件；`1` 表示探索不完整或已知的对话路由不符；`2` 表示输入、传输或设置错误。请保存去标识化的报告，并记录 SDK 版本及观察环境。参阅[疑难排解](/cn/xiaoling-x3/v1/troubleshooting)。

@@ -58,6 +58,202 @@
             ]
           }
         ]
+      },
+      {
+        "language": "zh-Hant",
+        "groups": [
+          {
+            "group": "歡迎",
+            "pages": [
+              "zh-Hant/index"
+            ]
+          },
+          {
+            "group": "Xiaoling X3 SDK",
+            "pages": [
+              "zh-Hant/xiaoling-x3/v1/overview",
+              "zh-Hant/xiaoling-x3/v1/quick-start",
+              "zh-Hant/xiaoling-x3/v1/installation",
+              "zh-Hant/xiaoling-x3/v1/ros2-architecture",
+              "zh-Hant/xiaoling-x3/v1/nodes-packages",
+              "zh-Hant/xiaoling-x3/v1/topics-services",
+              "zh-Hant/xiaoling-x3/v1/python-api",
+              "zh-Hant/xiaoling-x3/v1/audio-llm",
+              "zh-Hant/xiaoling-x3/v1/head-eyes-mouth",
+              "zh-Hant/xiaoling-x3/v1/examples",
+              "zh-Hant/xiaoling-x3/v1/troubleshooting",
+              "zh-Hant/xiaoling-x3/v1/release-notes"
+            ]
+          },
+          {
+            "group": "Xiaoling S100 SDK",
+            "pages": [
+              "zh-Hant/xiaoling-s100/v1/overview",
+              "zh-Hant/xiaoling-s100/v1/getting-started",
+              "zh-Hant/xiaoling-s100/v1/installation",
+              "zh-Hant/xiaoling-s100/v1/architecture",
+              "zh-Hant/xiaoling-s100/v1/nodes-packages",
+              "zh-Hant/xiaoling-s100/v1/python-api",
+              "zh-Hant/xiaoling-s100/v1/topics-services",
+              "zh-Hant/xiaoling-s100/v1/audio-llm",
+              "zh-Hant/xiaoling-s100/v1/head-eyes-mouth",
+              "zh-Hant/xiaoling-s100/v1/rf433",
+              "zh-Hant/xiaoling-s100/v1/touch-events",
+              "zh-Hant/xiaoling-s100/v1/vision-tracking",
+              "zh-Hant/xiaoling-s100/v1/pro-ultra",
+              "zh-Hant/xiaoling-s100/v1/examples",
+              "zh-Hant/xiaoling-s100/v1/troubleshooting",
+              "zh-Hant/xiaoling-s100/v1/release-status"
+            ]
+          }
+        ]
+      },
+      {
+        "language": "cn",
+        "groups": [
+          {
+            "group": "欢迎",
+            "pages": [
+              "cn/index"
+            ]
+          },
+          {
+            "group": "Xiaoling X3 SDK",
+            "pages": [
+              "cn/xiaoling-x3/v1/overview",
+              "cn/xiaoling-x3/v1/quick-start",
+              "cn/xiaoling-x3/v1/installation",
+              "cn/xiaoling-x3/v1/ros2-architecture",
+              "cn/xiaoling-x3/v1/nodes-packages",
+              "cn/xiaoling-x3/v1/topics-services",
+              "cn/xiaoling-x3/v1/python-api",
+              "cn/xiaoling-x3/v1/audio-llm",
+              "cn/xiaoling-x3/v1/head-eyes-mouth",
+              "cn/xiaoling-x3/v1/examples",
+              "cn/xiaoling-x3/v1/troubleshooting",
+              "cn/xiaoling-x3/v1/release-notes"
+            ]
+          },
+          {
+            "group": "Xiaoling S100 SDK",
+            "pages": [
+              "cn/xiaoling-s100/v1/overview",
+              "cn/xiaoling-s100/v1/getting-started",
+              "cn/xiaoling-s100/v1/installation",
+              "cn/xiaoling-s100/v1/architecture",
+              "cn/xiaoling-s100/v1/nodes-packages",
+              "cn/xiaoling-s100/v1/python-api",
+              "cn/xiaoling-s100/v1/topics-services",
+              "cn/xiaoling-s100/v1/audio-llm",
+              "cn/xiaoling-s100/v1/head-eyes-mouth",
+              "cn/xiaoling-s100/v1/rf433",
+              "cn/xiaoling-s100/v1/touch-events",
+              "cn/xiaoling-s100/v1/vision-tracking",
+              "cn/xiaoling-s100/v1/pro-ultra",
+              "cn/xiaoling-s100/v1/examples",
+              "cn/xiaoling-s100/v1/troubleshooting",
+              "cn/xiaoling-s100/v1/release-status"
+            ]
+          }
+        ]
+      },
+      {
+        "language": "jp",
+        "groups": [
+          {
+            "group": "はじめに",
+            "pages": [
+              "jp/index"
+            ]
+          },
+          {
+            "group": "Xiaoling X3 SDK",
+            "pages": [
+              "jp/xiaoling-x3/v1/overview",
+              "jp/xiaoling-x3/v1/quick-start",
+              "jp/xiaoling-x3/v1/installation",
+              "jp/xiaoling-x3/v1/ros2-architecture",
+              "jp/xiaoling-x3/v1/nodes-packages",
+              "jp/xiaoling-x3/v1/topics-services",
+              "jp/xiaoling-x3/v1/python-api",
+              "jp/xiaoling-x3/v1/audio-llm",
+              "jp/xiaoling-x3/v1/head-eyes-mouth",
+              "jp/xiaoling-x3/v1/examples",
+              "jp/xiaoling-x3/v1/troubleshooting",
+              "jp/xiaoling-x3/v1/release-notes"
+            ]
+          },
+          {
+            "group": "Xiaoling S100 SDK",
+            "pages": [
+              "jp/xiaoling-s100/v1/overview",
+              "jp/xiaoling-s100/v1/getting-started",
+              "jp/xiaoling-s100/v1/installation",
+              "jp/xiaoling-s100/v1/architecture",
+              "jp/xiaoling-s100/v1/nodes-packages",
+              "jp/xiaoling-s100/v1/python-api",
+              "jp/xiaoling-s100/v1/topics-services",
+              "jp/xiaoling-s100/v1/audio-llm",
+              "jp/xiaoling-s100/v1/head-eyes-mouth",
+              "jp/xiaoling-s100/v1/rf433",
+              "jp/xiaoling-s100/v1/touch-events",
+              "jp/xiaoling-s100/v1/vision-tracking",
+              "jp/xiaoling-s100/v1/pro-ultra",
+              "jp/xiaoling-s100/v1/examples",
+              "jp/xiaoling-s100/v1/troubleshooting",
+              "jp/xiaoling-s100/v1/release-status"
+            ]
+          }
+        ]
+      },
+      {
+        "language": "ko",
+        "groups": [
+          {
+            "group": "시작하기",
+            "pages": [
+              "ko/index"
+            ]
+          },
+          {
+            "group": "Xiaoling X3 SDK",
+            "pages": [
+              "ko/xiaoling-x3/v1/overview",
+              "ko/xiaoling-x3/v1/quick-start",
+              "ko/xiaoling-x3/v1/installation",
+              "ko/xiaoling-x3/v1/ros2-architecture",
+              "ko/xiaoling-x3/v1/nodes-packages",
+              "ko/xiaoling-x3/v1/topics-services",
+              "ko/xiaoling-x3/v1/python-api",
+              "ko/xiaoling-x3/v1/audio-llm",
+              "ko/xiaoling-x3/v1/head-eyes-mouth",
+              "ko/xiaoling-x3/v1/examples",
+              "ko/xiaoling-x3/v1/troubleshooting",
+              "ko/xiaoling-x3/v1/release-notes"
+            ]
+          },
+          {
+            "group": "Xiaoling S100 SDK",
+            "pages": [
+              "ko/xiaoling-s100/v1/overview",
+              "ko/xiaoling-s100/v1/getting-started",
+              "ko/xiaoling-s100/v1/installation",
+              "ko/xiaoling-s100/v1/architecture",
+              "ko/xiaoling-s100/v1/nodes-packages",
+              "ko/xiaoling-s100/v1/python-api",
+              "ko/xiaoling-s100/v1/topics-services",
+              "ko/xiaoling-s100/v1/audio-llm",
+              "ko/xiaoling-s100/v1/head-eyes-mouth",
+              "ko/xiaoling-s100/v1/rf433",
+              "ko/xiaoling-s100/v1/touch-events",
+              "ko/xiaoling-s100/v1/vision-tracking",
+              "ko/xiaoling-s100/v1/pro-ultra",
+              "ko/xiaoling-s100/v1/examples",
+              "ko/xiaoling-s100/v1/troubleshooting",
+              "ko/xiaoling-s100/v1/release-status"
+            ]
+          }
+        ]
       }
     ]
   },

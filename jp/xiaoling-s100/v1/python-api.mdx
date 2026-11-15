@@ -1,0 +1,19 @@
+---
+title: "Python API リファレンス"
+description: "S100 クライアントと主要な API メソッド"
+---
+
+> **開発者向けプレビュー／ハードウェア未検証：** S100 の ROS 統合と実機動作は対象機器で検証されていません。ローカルテストやプロファイル名だけでは、ハードウェアの互換性を確認できません。
+
+初期化済みで呼び出し元が所有する ROS ノードを渡し、`S100Client.from_ros(node, namespace="", profile=Profile.S100_BASE)` でクライアントを作成します。サブスクリプションの利用中はノードを Spin し、ノードを破棄する前にクライアントを閉じてください。
+
+| インターフェース | 主なメソッド | 用途 |
+| --- | --- | --- |
+| `S100Client` | `discover()`、`discover_services()` | グラフを調査 |
+| `sdk.conversation` | `send_text()`、`subscribe_text()`、`subscribe_status()` | 対話を送信・観測 |
+| `sdk.touch` | `discovery()`、`subscribe()` | タッチイベントを観測・正規化 |
+| `sdk.rf433` | `discovery()`、`subscribe()`、`subscribe_status()` | 受信機イベントと状態を監視 |
+| `sdk` | `subscribe_picture(callback, preview=False)` | 互換画像ストリームを購読 |
+| `sdk.head`、`sdk.eyes`、`sdk.mouth` | `discovery()` | コントローラー関連のインターフェースを調査 |
+
+サブスクリプションのメソッドはキャンセル関数を返します。パブリッシュは到達確認ではありません。セッション操作には別途 Spin 中の Executor が必要です。待機がタイムアウトしてもリモートサービスは処理を続ける場合があるため、再試行前に機器の状態を確認してください。[サンプル](/jp/xiaoling-s100/v1/examples)も参照してください。

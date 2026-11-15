@@ -1,0 +1,22 @@
+---
+title: "疑難排解"
+description: "在不洩漏敏感資料的情況下收集診斷資訊"
+---
+
+> **開發者預覽版／硬體尚未驗證：** X3 硬體與已部署的機器人執行環境尚未完成驗證。本機測試不能證明裝置相容性、實體行為或操作安全性。
+
+## Python 無法匯入 `rclpy`
+
+在同一個 Shell 載入相容的 ROS 環境，並確認 SDK 使用 ROS 對應的 Python 解譯器。重新執行[安裝說明](/zh-Hant/xiaoling-x3/v1/installation)中的匯入檢查。
+
+## 找不到預期的介面
+
+向操作人員確認核准網路、ROS Domain、Middleware、Namespace 及執行中的軟體版本。使用 [Node 與 Package](/zh-Hant/xiaoling-x3/v1/nodes-packages) 的唯讀指令檢查節點和名稱。探索本身無法證明訊息送達或 QoS 相容性。
+
+## 沒有收到 WebSocket 事件
+
+確認已授權的端點、橋接服務可用性、存取政策及 Namespace。機器人閒置時，觀察期間可能沒有事件。避免將對話資料輸出至共用日誌。
+
+## 尋求協助
+
+透過既有的 Warmcore Tech 支援管道提供 SDK 與軟體版本、執行操作、結束代碼及去識別化錯誤訊息。請移除憑證、位址、裝置識別碼、個人資料、對話文字及設定檔內容。
