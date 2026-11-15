@@ -1,55 +1,23 @@
-# Mintlify Starter Kit
+# Warmcore Tech Documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+Public developer documentation for the two independent Xiaoling SDK previews.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+- **Xiaoling X3 SDK** — RDK X3 Head 2.0 V1.0.2, Python package `warmcore-xiaoling-sdk` (`warmcore_xiaoling`), currently `0.6.0a1`.
+- **Xiaoling S100 SDK** — RDK S100 / ROS 2 Humble technical baseline, Python package `xiaoling-s100-sdk` (`xiaoling_s100`), currently `0.1.0a1`. Pro / Ultra hardware assignments require device-specific confirmation.
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+These are separate SDKs with separate private source repositories. This public repository contains approved developer-facing documentation only—not private SDK source, vendor handbooks, firmware, vendor message definitions, secrets, or calibration files.
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+## Documentation
 
-## AI-assisted writing
+- [X3 overview](en/xiaoling-x3/v1/overview.mdx)
+- [S100 overview](en/xiaoling-s100/v1/overview.mdx)
 
-Set up your AI coding tool to work with Mintlify:
+The documentation is built using [Mintlify](https://mintlify.com). See `docs.json` for navigation and configuration.
 
-```bash
-npx skills add https://mintlify.com/docs
-```
+English is the first published language. Traditional Chinese, Simplified Chinese, Japanese, Korean, and French are planned. Translation work must preserve technical identifiers and be reviewed before publishing.
 
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
+## Engineering status
 
-See the guides for [Claude Code](https://www.mintlify.com/docs/guides/claude-code), [Codex](https://www.mintlify.com/docs/guides/codex), [Cursor](https://www.mintlify.com/docs/guides/cursor), and [Devin Desktop](https://www.mintlify.com/docs/guides/devin-desktop) for tool-specific setup.
+SDK implementations and offline/loopback tests **do not** demonstrate runtime or physical compatibility with any robot. Both SDKs remain developer previews with device-specific ROS and hardware verification pending. Physical head, eye, and mouth control is not enabled through the preview SDKs.
 
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
-```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+The `v1` URL folder represents a documentation generation, not a stable 1.0 SDK release.
