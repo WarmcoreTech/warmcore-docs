@@ -1,0 +1,19 @@
+---
+title: "Python API reference"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+Create a client from an initialized, caller-owned ROS node using `S100Client.from_ros(node, namespace="", profile=Profile.S100_BASE)`. Spin the node while using subscriptions and close the client before destroying the node.
+
+| Surface | Selected methods | Purpose |
+| --- | --- | --- |
+| `S100Client` | `discover()`, `discover_services()` | Inspect the graph |
+| `sdk.conversation` | `send_text()`, `subscribe_text()`, `subscribe_status()` | Publish or observe dialog |
+| `sdk.touch` | `discovery()`, `subscribe()` | Observe and normalize touch events |
+| `sdk.rf433` | `discovery()`, `subscribe()`, `subscribe_status()` | Observe receiver events and status |
+| `sdk` | `subscribe_picture(callback, preview=False)` | Subscribe to a compatible image stream |
+| `sdk.head`, `sdk.eyes`, `sdk.mouth` | `discovery()` | Inspect controller-related interfaces |
+
+Subscription methods return cancel functions. A publish is not a delivery receipt. Session methods require a separate spinning executor and can time out while the remote service still executes; inspect device state before retrying. See [examples](/en/xiaoling-s100/v1/examples).

@@ -1,0 +1,19 @@
+---
+title: "ROS 2 topics and services"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+The preview can inspect the graph and work with compatible interfaces. These relative dialog names are candidates for the selected deployment; namespaces and remapping affect resolved names.
+
+| Relative name | Standard ROS type | SDK action |
+| --- | --- | --- |
+| `dialog/text_input` | `std_msgs/msg/String` | Publish text |
+| `dialog/text_result` | `std_msgs/msg/String` | Subscribe |
+| `dialog/status` | `std_msgs/msg/String` | Subscribe |
+| `dialog/start_session` | `std_srvs/srv/Trigger` | Request |
+| `dialog/stop_session` | `std_srvs/srv/Trigger` | Request |
+| `touch/event` | `std_msgs/msg/Int32` | Subscribe |
+
+RF433 and PCM routes require compatible authorized vendor type support. No vendor message definitions are published here. A matching endpoint does not guarantee QoS compatibility or delivery. Publishing text or invoking services may affect the device and requires operator approval.

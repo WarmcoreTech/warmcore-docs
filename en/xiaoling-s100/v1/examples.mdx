@@ -1,0 +1,25 @@
+---
+title: "Examples"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+## Normalize a synthetic facial-touch token
+
+This example does not access ROS or a device:
+
+```python
+from xiaoling_s100 import Profile
+from xiaoling_s100.events import FaceTouchAdapter
+
+adapter = FaceTouchAdapter({"sample": "example"}, Profile.XIAOLING_ULTRA)
+event = adapter.normalize("sample")
+print(event.area, event.verified)
+```
+
+The mapping is an example, not a verified physical location. For the full fixture-based demonstration run `python examples/offline_touch.py` from the authorized SDK checkout.
+
+## Observe a target graph
+
+Use [quick start](/en/xiaoling-s100/v1/getting-started) for an operator-approved read-only inspection. Do not share raw diagnostic output without removing sensitive data.

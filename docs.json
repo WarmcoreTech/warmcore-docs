@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Warmcore Tech Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#395EC9",
+    "light": "#7797F0",
+    "dark": "#253D8F"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -24,6 +24,7 @@
             "pages": [
               "en/xiaoling-x3/v1/overview",
               "en/xiaoling-x3/v1/quick-start",
+              "en/xiaoling-x3/v1/installation",
               "en/xiaoling-x3/v1/ros2-architecture",
               "en/xiaoling-x3/v1/nodes-packages",
               "en/xiaoling-x3/v1/topics-services",
@@ -31,7 +32,8 @@
               "en/xiaoling-x3/v1/audio-llm",
               "en/xiaoling-x3/v1/head-eyes-mouth",
               "en/xiaoling-x3/v1/examples",
-              "en/xiaoling-x3/v1/troubleshooting"
+              "en/xiaoling-x3/v1/troubleshooting",
+              "en/xiaoling-x3/v1/release-notes"
             ]
           },
           {
@@ -39,8 +41,20 @@
             "pages": [
               "en/xiaoling-s100/v1/overview",
               "en/xiaoling-s100/v1/getting-started",
+              "en/xiaoling-s100/v1/installation",
               "en/xiaoling-s100/v1/architecture",
-              "en/xiaoling-s100/v1/nodes-packages"
+              "en/xiaoling-s100/v1/nodes-packages",
+              "en/xiaoling-s100/v1/topics-services",
+              "en/xiaoling-s100/v1/python-api",
+              "en/xiaoling-s100/v1/audio-llm",
+              "en/xiaoling-s100/v1/head-eyes-mouth",
+              "en/xiaoling-s100/v1/rf433",
+              "en/xiaoling-s100/v1/touch-events",
+              "en/xiaoling-s100/v1/vision-tracking",
+              "en/xiaoling-s100/v1/pro-ultra",
+              "en/xiaoling-s100/v1/examples",
+              "en/xiaoling-s100/v1/troubleshooting",
+              "en/xiaoling-s100/v1/release-status"
             ]
           }
         ]
@@ -54,15 +68,10 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:support@mintlify.com"
+        "href": "https://warmcore-tech.com",
+        "label": "Warmcore Tech"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
@@ -78,9 +87,7 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/WarmcoreTech"
     }
   }
 }

@@ -1,0 +1,15 @@
+---
+title: "Installation"
+description: "Prepare the Xiaoling S100 SDK preview"
+---
+
+The S100 SDK requires an authorized checkout, Python 3.10 or later, and a matching ROS environment for native ROS use. Hardware compatibility remains unverified. From your authorized SDK checkout:
+
+```bash
+python -m pip install .
+python -c "import xiaoling_s100; print('SDK import OK')"
+```
+
+An import checks local packaging only. For ROS integrations, use the Python interpreter and sourced ROS environment compatible with the deployment. Some features require authorized version-matched vendor message type support. Obtain it through an approved channel; this portal does not distribute it. Do not overwrite the robot overlay.
+
+For the optional WebSocket client, install the SDK's `rosbridge` extra only in an approved environment; it may download additional dependencies. Use the operator-approved network and matching ROS bridge.

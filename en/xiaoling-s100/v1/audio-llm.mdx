@@ -1,0 +1,10 @@
+---
+title: "Audio and LLM"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+The preview exposes `sdk.audio.publish_pcm()`, `flush()`, `adjust_volume()` and `subscribe_active()` for compatible deployments. Playback and volume operations affect the robot and require operator approval. A queued frame or activity event does not prove audible playback. Device format, arbitration and lip synchronization remain acceptance items.
+
+`xiaoling_s100.llm.OpenAICompatibleProvider` and `TextConversation` provide a separate text-provider path. Configure an approved endpoint and model through your application environment. Protect credentials and conversation data. A workstation text response does not verify robot delivery or replace the microphone, speech and real-time dialog pipeline.
