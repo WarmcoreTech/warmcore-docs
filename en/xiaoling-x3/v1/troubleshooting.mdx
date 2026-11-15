@@ -1,0 +1,22 @@
+---
+title: "Troubleshooting"
+description: "Collect useful evidence without exposing sensitive data"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## Python cannot import `rclpy`
+
+Source the compatible ROS environment in the same shell and check that the SDK is running under the Python interpreter used by ROS. Re-run the import checks in [installation](/en/xiaoling-x3/v1/installation).
+
+## No expected interfaces are discovered
+
+Confirm the operator-approved network, ROS domain, middleware, namespace, and running software version. Inspect nodes and names with the read-only commands in [nodes and packages](/en/xiaoling-x3/v1/nodes-packages). Discovery alone does not prove message delivery or QoS compatibility.
+
+## No WebSocket events arrive
+
+Confirm the authorized endpoint, bridge availability, access policy, and namespace. An idle robot may produce no events during the observation window. Avoid printing dialog payloads in shared logs.
+
+## Ask for help
+
+Share SDK and software versions, the operation, exit code, and sanitized error messages through your existing Warmcore Tech support channel. Remove credentials, addresses, identifiers, personal data, conversation text, and configuration dumps.
