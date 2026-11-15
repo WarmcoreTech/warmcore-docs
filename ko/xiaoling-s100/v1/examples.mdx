@@ -1,0 +1,25 @@
+---
+title: "예제"
+description: "S100 SDK의 오프라인 터치와 그래프 관찰"
+---
+
+> **개발자 프리뷰 / 하드웨어 미검증:** S100의 ROS 통합 및 물리적 동작은 대상 장치에서 검증되지 않았습니다. 로컬 테스트나 프로필 이름만으로 하드웨어 호환성을 확인할 수 없습니다.
+
+## 합성 얼굴 터치 토큰 정규화
+
+다음 예제는 ROS나 실제 장치에 접근하지 않습니다.
+
+```python
+from xiaoling_s100 import Profile
+from xiaoling_s100.events import FaceTouchAdapter
+
+adapter = FaceTouchAdapter({"sample": "example"}, Profile.XIAOLING_ULTRA)
+event = adapter.normalize("sample")
+print(event.area, event.verified)
+```
+
+매핑은 예시이며 실제 물리적 터치 위치를 검증한 결과가 아닙니다. Fixture를 사용하는 전체 데모는 허가된 SDK 체크아웃에서 `python examples/offline_touch.py`를 실행하세요.
+
+## 대상 ROS 그래프 관찰
+
+[빠른 시작](/ko/xiaoling-s100/v1/getting-started)에 따라 운영자가 승인한 읽기 전용 검사를 수행하세요. 진단 결과를 공유하기 전에 민감정보를 제거해야 합니다.

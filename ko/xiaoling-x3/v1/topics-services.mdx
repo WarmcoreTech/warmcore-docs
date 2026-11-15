@@ -1,0 +1,20 @@
+---
+title: "토픽과 서비스"
+description: "사용 전 X3 ROS 인터페이스 확인"
+---
+
+> **개발자 프리뷰 / 하드웨어 미검증:** X3 하드웨어와 실제 로봇에 배포된 실행 환경은 아직 검증되지 않았습니다. 로컬 테스트만으로 장치 호환성, 물리적 동작 또는 안전한 운용을 보장할 수 없습니다.
+
+## 대화 인터페이스 후보
+
+SDK 프리뷰는 다음 상대 이름을 사용합니다. 네임스페이스와 리매핑에 따라 실제 확인되는 이름이 달라집니다. 사용 전에 각 배포 환경의 그래프와 타입을 확인하세요.
+
+| 상대 이름 | ROS 타입 | 클라이언트 방향 |
+| --- | --- | --- |
+| `dialog/text_input` | `std_msgs/msg/String` | 텍스트 게시 |
+| `dialog/status` | `std_msgs/msg/String` | 상태 구독 |
+| `dialog/text_result` | `std_msgs/msg/String` | 결과 구독 |
+| `dialog/start_session` | `std_srvs/srv/Trigger` | 세션 시작 요청 |
+| `dialog/stop_session` | `std_srvs/srv/Trigger` | 세션 종료 요청 |
+
+메시지 게시나 서비스 호출은 로봇 동작에 영향을 줄 수 있으므로 운영자 승인이 필요합니다. 이름과 타입이 일치하더라도 메시지 전달, 올바른 QoS, 엔드포인트 신원 또는 장치 동작이 보장되지는 않습니다. 프리뷰 상태 구독자는 Reliable, Transient Local 내구성, 깊이 1을 사용합니다. 이 문서에는 벤더 메시지 정의가 포함되지 않습니다.
