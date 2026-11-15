@@ -1,0 +1,17 @@
+---
+title: "安装"
+description: "准备 S100 SDK 的 Python 与 ROS 环境"
+---
+
+> **开发者预览版／硬件尚未验证：** S100 的 ROS 集成与实体行为尚未在目标设备验证。本机测试及产品设置档标签不能证明硬件兼容性。
+
+使用 Python 3.10 或更新版本，并取得已授权的 SDK 副本。从该目录安装基础 SDK：
+
+```bash
+python -m pip install .
+python -c "import xiaoling_s100; print('SDK import OK')"
+```
+
+成功导入模块只代表本机套件可用。ROS 集成须使用与部署环境兼容的 Python 解译器和已加载的 ROS 环境。部分功能需要获授权、版本相符的供应商消息类型支持；请通过核准管道取得，本网站不会散布。不要覆写机器人的 ROS Overlay。
+
+若使用选用的 WebSocket 客户端，运行 `python -m pip install ".[rosbridge]"` 可能下载相依套件。请遵循组织套件政策，并使用操作人员核准的网络。

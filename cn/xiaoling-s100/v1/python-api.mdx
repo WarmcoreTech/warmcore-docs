@@ -1,0 +1,19 @@
+---
+title: "Python API 参考"
+description: "S100 客户端及选定 API 方法"
+---
+
+> **开发者预览版／硬件尚未验证：** S100 的 ROS 集成与实体行为尚未在目标设备验证。本机测试及产品设置档标签不能证明硬件兼容性。
+
+使用已初始化且由调用者拥有的 ROS Node，通过 `S100Client.from_ros(node, namespace="", profile=Profile.S100_BASE)` 创建客户端。订阅期间须持续 Spin，并在销毁 Node 前关闭客户端。
+
+| 接口 | 选定方法 | 用途 |
+| --- | --- | --- |
+| `S100Client` | `discover()`、`discover_services()` | 检查节点图 |
+| `sdk.conversation` | `send_text()`、`subscribe_text()`、`subscribe_status()` | 发布或监听对话 |
+| `sdk.touch` | `discovery()`、`subscribe()` | 观察及范式触摸事件 |
+| `sdk.rf433` | `discovery()`、`subscribe()`、`subscribe_status()` | 监听接收器事件和状态 |
+| `sdk` | `subscribe_picture(callback, preview=False)` | 订阅兼容的影像串流 |
+| `sdk.head`、`sdk.eyes`、`sdk.mouth` | `discovery()` | 检查控制器相关接口 |
+
+订阅方法会回传取消订阅函数。发布消息不等于已送达。工作阶段方法需要另外运行的 Executor；即使等待逾时，远程 Service 仍可能继续运行，因此重新调用前应确认设备状态。参阅[范例](/cn/xiaoling-s100/v1/examples)。

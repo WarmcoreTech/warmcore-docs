@@ -1,0 +1,20 @@
+---
+title: "Node 与 Package"
+description: "探索部署环境中的 ROS 节点图"
+---
+
+> **开发者预览版／硬件尚未验证：** X3 硬件与已部署的机器人运行环境尚未完成验证。本机测试不能证明设备兼容性、实体行为或操作安全性。
+
+## 探索运行中的节点图
+
+在工作站使用与机器人兼容的 ROS 环境，检查实际部署：
+
+```bash
+ros2 node list
+ros2 topic list -t
+ros2 service list -t
+```
+
+记录 SDK 版本、软件版本、Namespace 与去识别化的观察结果。可用的 Node 与 Package 取决于已部署映像档及设置。节点出现在 ROS 图中，不代表其运作正常或可安全控制。
+
+SDK 的 Python 导入名称为 `warmcore_xiaoling`。ROS 模块由兼容的 ROS 环境提供。供应商接口定义另有权限管理，本文档不会重新散布。若预期接口缺失，请参阅[疑难排解](/cn/xiaoling-x3/v1/troubleshooting)。

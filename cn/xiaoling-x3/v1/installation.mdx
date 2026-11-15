@@ -1,0 +1,24 @@
+---
+title: "安装"
+description: "取得并准备 X3 SDK 预览版"
+---
+
+> **开发者预览版／硬件尚未验证：** X3 硬件与已部署的机器人运行环境尚未完成验证。本机测试不能证明设备兼容性、实体行为或操作安全性。
+
+## 环境需求
+
+请向 Warmcore Tech 取得已授权的 SDK 项目副本与散布条款。开发工作站须使用 Python 3.8 或更新版本。ROS 功能必须使用与机器人 ROS 安装兼容的 Python 版本，并在同一个 Shell 加载 ROS 环境。ROS 相依套件由该环境提供，而不是 SDK 安装程序。未经操作人员核准，不要在机器人上安装或修改软件。
+
+## 从项目目录安装
+
+确认已安装兼容的 `setuptools` 与 `wheel`，再运行：
+
+```bash
+python3 -m pip install --user --no-deps --no-build-isolation .
+python3 -c "import warmcore_xiaoling; import warmcore_xiaoling.llm; print('SDK import OK')"
+python3 -c "import rclpy; from std_msgs.msg import String; from std_srvs.srv import Trigger; print('ROS dialog imports OK')"
+```
+
+这些选项会停用相依套件安装与建置隔离；缺少的前置套件须另行准备。成功导入模块只代表本机可使用，不代表与实际 X3 设备兼容。实验性语音功能需要经授权且版本相符的供应商接口套件。请勿替换或覆盖机器人原有的接口套件。
+
+选用的 WebSocket 客户端可从 SDK 目录运行 `python -m pip install ".[rosbridge]"`，这可能下载其他相依套件。请遵循组织核准的套件政策，接着阅读[快速入门](/cn/xiaoling-x3/v1/quick-start)。
