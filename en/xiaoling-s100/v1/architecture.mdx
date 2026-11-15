@@ -1,0 +1,12 @@
+---
+title: "Architecture"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+A caller-owned ROS node supplies the native graph to `S100Client`; the application spins the node and closes SDK resources. Native subscriptions and command operations depend on the active ROS environment and compatible endpoints.
+
+An independent read-only rosbridge client observes selected events when an approved bridge is deployed. WebSocket loopback tests do not validate a robot bridge. A client allowlist does not secure the server; use operator-managed access controls and encryption on untrusted links.
+
+The text-model adapter is a separate workstation integration. It does not replace the robot's complete real-time voice pipeline.

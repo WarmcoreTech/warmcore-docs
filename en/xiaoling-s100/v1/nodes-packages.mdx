@@ -1,0 +1,16 @@
+---
+title: "ROS 2 nodes and packages"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+Availability depends on the installed image, launch selection and connected peripherals. Ask the operator for a compatible ROS environment and inspect the actual graph:
+
+```bash
+ros2 node list
+ros2 topic list -t
+ros2 service list -t
+```
+
+The SDK import is `xiaoling_s100`; ROS packages and vendor type support come from the authorized environment. Compare discovered names and types with the target configuration. An executable, package or graph entry alone does not confirm a working device or active hardware.

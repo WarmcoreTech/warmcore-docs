@@ -36,7 +36,12 @@
           },
           {
             "group": "Xiaoling S100 SDK",
-            "pages": []
+            "pages": [
+              "en/xiaoling-s100/v1/overview",
+              "en/xiaoling-s100/v1/getting-started",
+              "en/xiaoling-s100/v1/architecture",
+              "en/xiaoling-s100/v1/nodes-packages"
+            ]
           }
         ]
       }

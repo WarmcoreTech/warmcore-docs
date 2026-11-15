@@ -1,0 +1,20 @@
+---
+title: "Quick start"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+Obtain an authorized SDK checkout and applicable distribution terms. Use a Python 3.10 environment and follow [installation](/en/xiaoling-s100/v1/installation). From the checkout, run the offline fixture example:
+
+```bash
+python examples/offline_touch.py
+```
+
+This processes synthetic events without ROS, network or device I/O. It does not validate a receiver or facial-touch hardware. For a permitted ROS environment, run the operator-confirmed graph inspection:
+
+```bash
+python examples/monitor.py --namespace robot --inspect-only
+```
+
+Replace `robot` with the deployment namespace or omit the option for root. Discovery is a snapshot, not proof of device operation.
