@@ -1,0 +1,18 @@
+---
+title: "ROS 2 architecture"
+description: "Understand integration boundaries"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## Integration paths
+
+A Python application can use the SDK's ROS client in a compatible ROS environment, or use its read-only WebSocket client to observe dialog events through an operator-approved rosbridge deployment. These are separate paths; WebSocket observation does not provide robot command access.
+
+## Discovery and evidence
+
+ROS names can be changed by namespaces or remapping. The SDK diagnostic checks observed names, types, and selected QoS routes. A graph result is a snapshot: it does not establish endpoint identity, authorization, persistent health, delivery, or physical behavior. Read [topics and services](/en/xiaoling-x3/v1/topics-services) for the preview contracts.
+
+## Network boundary
+
+Use operator-managed network access controls. A client-side topic allowlist restricts that client only; it does not secure rosbridge for other clients. Never expose a bridge directly to the public internet. For an untrusted link, obtain an operator-managed TLS endpoint with certificate verification and access control.

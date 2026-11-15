@@ -1,0 +1,20 @@
+---
+title: "Nodes and packages"
+description: "Working with a deployment-specific ROS graph"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## Discover the running graph
+
+Use a robot-compatible ROS environment on the workstation and inspect the actual deployment:
+
+```bash
+ros2 node list
+ros2 topic list -t
+ros2 service list -t
+```
+
+Record the SDK version, software version, namespace, and sanitized observations. The available nodes and packages depend on the deployed image and configuration. A node appearing in the graph does not prove that it is healthy or safe to control.
+
+The SDK package is imported as `warmcore_xiaoling`. ROS modules come from the compatible ROS environment. Vendor interface definitions are separately controlled and are not redistributed by this documentation. Follow [troubleshooting](/en/xiaoling-x3/v1/troubleshooting) if expected interfaces are missing.

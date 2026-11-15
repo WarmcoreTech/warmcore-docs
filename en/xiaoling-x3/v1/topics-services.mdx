@@ -1,0 +1,20 @@
+---
+title: "Topics and services"
+description: "Discover interfaces before use"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## Dialog interface candidates
+
+The SDK preview uses the following relative names. Namespace and remapping affect resolved names. Confirm the actual graph and types on each deployment before use.
+
+| Relative name | ROS type | Client direction |
+| --- | --- | --- |
+| `dialog/text_input` | `std_msgs/msg/String` | Publish text |
+| `dialog/status` | `std_msgs/msg/String` | Subscribe to status |
+| `dialog/text_result` | `std_msgs/msg/String` | Subscribe to results |
+| `dialog/start_session` | `std_srvs/srv/Trigger` | Request session start |
+| `dialog/stop_session` | `std_srvs/srv/Trigger` | Request session stop |
+
+Publishing or requesting a service can change robot behavior and requires operator approval. A matching name and type does not prove delivery, correct QoS, identity, or device behavior. The status subscriber uses reliable, transient-local durability with depth 1 in the preview client. Vendor message definitions are not included here.

@@ -1,0 +1,26 @@
+---
+title: "Examples"
+description: "Choose a safe first experiment"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## Read-only acceptance
+
+From an authorized SDK checkout, use the operator-confirmed namespace:
+
+```bash
+python3 examples/x3_acceptance.py --ros --namespace robot --wait 5
+```
+
+For an approved WebSocket endpoint, install the optional client dependencies and use:
+
+```bash
+python examples/x3_acceptance.py --websocket ws://ROBOT_HOST:9090 --wait 30
+```
+
+Replace `ROBOT_HOST` with an operator-supplied endpoint. The WebSocket report counts observed events without storing their text. An idle window can legitimately contain no events; missing events do not alone prove failure of the robot. Never expose the endpoint to the public internet.
+
+## Workstation-only text
+
+See [audio and LLM integration](/en/xiaoling-x3/v1/audio-llm) for a text-provider example. A local response does not confirm robot integration.

@@ -1,0 +1,24 @@
+---
+title: "Getting started"
+description: "Prepare a safe evaluation"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## Before you begin
+
+Obtain an authorized SDK checkout, confirm its version, and arrange an operator-approved workstation and isolated network. For ROS discovery, ask the operator for the compatible ROS environment, domain, middleware, and namespace. Do not change the robot software.
+
+## Observe the ROS graph
+
+On the workstation, source the robot-compatible ROS environment, install the SDK using [installation](/en/xiaoling-x3/v1/installation), then run this from the authorized checkout:
+
+```bash
+python3 examples/x3_acceptance.py --ros --namespace robot --wait 5
+```
+
+Replace `robot` with the operator-confirmed namespace, or omit `--namespace` for the root namespace. The report describes observed interfaces; discovery alone does not establish delivery or device safety.
+
+## Interpret the result
+
+Exit `0` means the selected observation met its criteria; `1` means incomplete discovery or a known dialog route mismatch; `2` means input, transport, or setup error. Save a sanitized report with the SDK version and observed environment. See [troubleshooting](/en/xiaoling-x3/v1/troubleshooting).

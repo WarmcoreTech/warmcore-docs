@@ -1,0 +1,10 @@
+---
+title: "Vision and tracking"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+`S100Client.subscribe_picture(callback, preview=False)` supports a compatible native image subscription. `sdk.head.subscribe_follow(callback)` observes follow-state data when a matching publisher exists. Neither API proves a camera is installed or that tracking works on a particular unit.
+
+Confirm the actual image type, topic, QoS and active vision path in the deployed graph. Image and preview encoding vary with deployment. Treat camera data as sensitive and validate processing and permissions before use.

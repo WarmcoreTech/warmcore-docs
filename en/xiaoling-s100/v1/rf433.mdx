@@ -1,0 +1,10 @@
+---
+title: "RF433"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+`sdk.rf433.discovery()` and `status_discovery()` inspect receiver-related endpoints. `subscribe(callback)` and `subscribe_status(callback, success_code=...)` register observers and return cancel functions. This requires compatible vendor type support.
+
+Receiver status values depend on configuration; a retained status may be stale. RF433 data may include device information, so avoid sharing raw event data. RF433 and raw touch streams do not have a confirmed shared correlation identifier. Receiver presence and code mappings require device verification.

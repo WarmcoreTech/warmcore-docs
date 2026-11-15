@@ -1,0 +1,10 @@
+---
+title: "Touch events"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+`sdk.touch.subscribe(callback, areas=..., deduplicate_seconds=...)` observes a compatible touch stream and normalizes events; `areas` is an application-provided mapping. Unknown codes remain unmapped. Cancel the returned subscription when finished.
+
+`FaceTouchAdapter` normalizes provided tokens offline. The inspected baseline did not establish a public live facial-touch event publisher. The offline adapter is not a hardware connection and does not validate touch locations.

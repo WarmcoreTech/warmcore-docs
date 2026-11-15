@@ -1,0 +1,10 @@
+---
+title: "Head, eyes and mouth"
+description: "Xiaoling S100 SDK developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** S100 ROS integration and physical behavior have not been verified on a target device. Local tests and profile labels do not establish hardware compatibility.
+
+The `sdk.head`, `sdk.eyes` and `sdk.mouth` interfaces offer discovery and selected subscriptions when compatible endpoints are present. `prepare_rpy()` and `prepare_position()` prepare data offline using caller-provided bounds; those bounds are not verified device limits.
+
+Physical motion is disabled: each controller's `move()` raises `MotionDisabled`. No prepared value should be interpreted as authorization or evidence of safe movement. Hardware limits, ownership and supervised acceptance must be established separately.

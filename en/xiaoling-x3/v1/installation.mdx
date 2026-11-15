@@ -1,0 +1,24 @@
+---
+title: "Installation"
+description: "Obtain and prepare the preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## Requirements
+
+Obtain an authorized SDK checkout and distribution terms from Warmcore Tech. Use Python 3.8 or later on a development workstation. For ROS features, use the Python version supported by the robot-compatible ROS installation and source that environment in the same shell. ROS dependencies are provided by that environment, not the SDK installer. Do not install on or modify the robot without operator approval.
+
+## Install from the checkout
+
+With compatible `setuptools` and `wheel` already installed, run:
+
+```bash
+python3 -m pip install --user --no-deps --no-build-isolation .
+python3 -c "import warmcore_xiaoling; import warmcore_xiaoling.llm; print('SDK import OK')"
+python3 -c "import rclpy; from std_msgs.msg import String; from std_srvs.srv import Trigger; print('ROS dialog imports OK')"
+```
+
+The flags prevent dependency installation and build isolation; missing prerequisites must be supplied separately. An import verifies local availability only, not robot compatibility. Experimental voice features require an authorized version-matched vendor interface package. Do not replace or overlay the robot's interface package.
+
+For the optional WebSocket client, the SDK checkout provides `python -m pip install ".[rosbridge]"`; this may download dependencies. Follow your organization's approved package policy. Continue to [getting started](/en/xiaoling-x3/v1/quick-start).

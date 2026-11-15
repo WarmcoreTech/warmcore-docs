@@ -1,0 +1,22 @@
+---
+title: "Audio and LLM integration"
+description: "Prototype with explicit boundaries"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## Text model integration
+
+The preview adapter accepts a compatible chat-completions endpoint through `LLM_CHAT_ENDPOINT` and a model through `LLM_MODEL`; use `LLM_API_KEY` only when required. Configure secrets through your environment or approved secret manager, never source code or shared logs. Keys require HTTPS except on loopback. Plain HTTP also exposes conversation text; use it only on loopback or an explicitly approved protected network.
+
+From the authorized SDK checkout, the following requests a text response on the workstation:
+
+```bash
+python3 examples/llm_robot_reply.py "Hello"
+```
+
+This requires a configured compatible provider. Live provider compatibility remains unverified. Sending output to the robot can affect playback and requires separate operator approval.
+
+## Audio scope
+
+Experimental PCM utilities are available, but playback requires a compatible authorized interface package and device validation. The preview does not replace the complete microphone-to-model voice pipeline or guarantee lip synchronization. Protect recordings and conversation content.
