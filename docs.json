@@ -258,8 +258,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/warmcore-gradient.png",
-    "dark": "/logo/warmcore-gradient.png"
+    "light": "/logo/warmcore-gradient-compact.png",
+    "dark": "/logo/warmcore-gradient-compact.png"
   },
   "navbar": {
     "links": [
