@@ -1,0 +1,29 @@
+---
+title: "Python API reference"
+description: "Preview scope and access"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## `XiaolingClient`
+
+The ROS client exposes callbacks for status and text results. Callback execution requires the node to be spun. The following read-only example prints data locally; dialog data can contain personal information, so do not use it in shared logs without an appropriate policy.
+
+```python
+import rclpy
+from warmcore_xiaoling import XiaolingClient
+
+rclpy.init()
+node = XiaolingClient(on_status=print, on_text_result=print)
+try:
+    rclpy.spin(node)
+finally:
+    node.destroy_node()
+    rclpy.shutdown()
+```
+
+`namespace` selects the client namespace; it must match the deployment's names and remappings. `send_text(text)` publishes a nonempty string and returns immediately; it does not acknowledge delivery. `text_subscriber_count()` reports discovery, not delivery. `start_session(timeout_sec=5.0)` and `stop_session(timeout_sec=5.0)` wait for a service and return an asynchronous future. Spin the node, enforce a separate response timeout, and inspect the response. Session and text operations can affect the robot and require operator approval.
+
+## Read-only WebSocket client
+
+`warmcore_xiaoling.rosbridge.XiaolingRosbridgeClient` supports connection, subscriptions to dialog status and text-result events, receiving, and closing. Its allowlist does not secure the server. Deployed transport and events remain unverified. See [examples](/en/xiaoling-x3/v1/examples) for a diagnostic workflow.
