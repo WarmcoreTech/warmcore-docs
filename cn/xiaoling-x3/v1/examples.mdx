@@ -1,9 +1,9 @@
 ---
-title: "范例"
+title: "示例"
 description: "选择安全的第一个 X3 SDK 实验"
 ---
 
-> **开发者预览版／硬件尚未验证：** X3 硬件与已部署的机器人运行环境尚未完成验证。本机测试不能证明设备兼容性、实体行为或操作安全性。
+> **开发者预览版／硬件尚未验证：** X3 硬件与已部署的机器人运行环境尚未完成验证。本机测试不能证明设备兼容性、物理行为或操作安全性。
 
 ## 唯读验收检查
 
@@ -13,7 +13,7 @@ description: "选择安全的第一个 X3 SDK 实验"
 python3 examples/x3_acceptance.py --ros --namespace robot --wait 5
 ```
 
-若有核准的 WebSocket 端点，先安装选用的客户端相依套件，再运行：
+若有核准的 WebSocket 端点，先安装选用的客户端相依软件包，再运行：
 
 ```bash
 python examples/x3_acceptance.py --websocket ws://ROBOT_HOST:9090 --wait 30
@@ -23,4 +23,4 @@ python examples/x3_acceptance.py --websocket ws://ROBOT_HOST:9090 --wait 30
 
 ## 仅在工作站运行的文本功能
 
-文本模型范例见[音频与 LLM 集成](/cn/xiaoling-x3/v1/audio-llm)。本机产生文本回应，不代表已完成机器人集成。
+文本模型示例见[音频与 LLM 集成](/cn/xiaoling-x3/v1/audio-llm)。本机产生文本回应，不代表已完成机器人集成。

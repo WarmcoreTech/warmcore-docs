@@ -1,10 +1,10 @@
 ---
 title: "触摸事件"
-description: "订阅 S100 触摸串流与脱机脸部触摸 Token"
+description: "订阅 S100 触摸数据流与离线脸部触摸 Token"
 ---
 
-> **开发者预览版／硬件尚未验证：** S100 的 ROS 集成与实体行为尚未在目标设备验证。本机测试及产品设置档标签不能证明硬件兼容性。
+> **开发者预览版／硬件尚未验证：** S100 的 ROS 集成与物理行为尚未在目标设备验证。本机测试及产品配置文件标签不能证明硬件兼容性。
 
-`sdk.touch.subscribe(callback, areas=..., deduplicate_seconds=...)` 会监听兼容的触摸串流并范式事件；`areas` 是应用程序提供的对应表。未知代码不会自动对应位置。结束后请调用回传的取消订阅函数。
+`sdk.touch.subscribe(callback, areas=..., deduplicate_seconds=...)` 会监听兼容的触摸数据流并范式事件；`areas` 是应用程序提供的对应表。未知代码不会自动对应位置。结束后请调用返回的取消订阅函数。
 
-`FaceTouchAdapter` 只会脱机范式已提供的 Token。在已检查的基准中，尚未确认公开的即时脸部触摸事件 Publisher。脱机适配器并非硬件连接，也不能验证触摸区域。
+`FaceTouchAdapter` 只会离线范式已提供的 Token。在已检查的基准中，尚未确认公开的即时脸部触摸事件 Publisher。离线适配器并非硬件连接，也不能验证触摸区域。

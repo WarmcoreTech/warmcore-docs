@@ -1,13 +1,13 @@
 ---
-title: "范例"
-description: "S100 SDK 的脱机触摸事件与节点图范例"
+title: "示例"
+description: "S100 SDK 的离线触摸事件与节点图示例"
 ---
 
-> **开发者预览版／硬件尚未验证：** S100 的 ROS 集成与实体行为尚未在目标设备验证。本机测试及产品设置档标签不能证明硬件兼容性。
+> **开发者预览版／硬件尚未验证：** S100 的 ROS 集成与物理行为尚未在目标设备验证。本机测试及产品配置文件标签不能证明硬件兼容性。
 
 ## 范式仿真的脸部触摸 Token
 
-此范例不会访问 ROS 或实际设备：
+此示例不会访问 ROS 或实际设备：
 
 ```python
 from xiaoling_s100 import Profile
@@ -18,7 +18,7 @@ event = adapter.normalize("sample")
 print(event.area, event.verified)
 ```
 
-此对应表只是范例，并非已验证的实际触摸位置。若要运行完整的 Fixture 示范，请在已授权的 SDK 目录运行 `python examples/offline_touch.py`。
+此对应表只是示例，并非已验证的实际触摸位置。若要运行完整的 Fixture 示范，请在已授权的 SDK 目录运行 `python examples/offline_touch.py`。
 
 ## 观察目标节点图
 

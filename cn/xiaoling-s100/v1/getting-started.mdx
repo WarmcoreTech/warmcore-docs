@@ -1,17 +1,17 @@
 ---
 title: "快速入门"
-description: "开始使用 S100 SDK 的脱机范例与 ROS 探索"
+description: "开始使用 S100 SDK 的离线示例与 ROS 探索"
 ---
 
-> **开发者预览版／硬件尚未验证：** S100 的 ROS 集成与实体行为尚未在目标设备验证。本机测试及产品设置档标签不能证明硬件兼容性。
+> **开发者预览版／硬件尚未验证：** S100 的 ROS 集成与物理行为尚未在目标设备验证。本机测试及产品配置文件标签不能证明硬件兼容性。
 
-请先取得已授权的 SDK 项目副本及适用的散布条款。使用 Python 3.10 环境并遵循[安装说明](/cn/xiaoling-s100/v1/installation)。在 SDK 目录运行脱机 Fixture 范例：
+请先取得已授权的 SDK 项目副本及适用的分发条款。使用 Python 3.10 环境并遵循[安装说明](/cn/xiaoling-s100/v1/installation)。在 SDK 目录运行离线 Fixture 示例：
 
 ```bash
 python examples/offline_touch.py
 ```
 
-此范例只处理仿真事件，不会访问 ROS、网络或设备 I/O，不能验证接收器或脸部触摸硬件。在获准的 ROS 环境，可运行操作人员确认的节点图检查：
+此示例只处理仿真事件，不会访问 ROS、网络或设备 I/O，不能验证接收器或脸部触摸硬件。在获准的 ROS 环境，可运行操作人员确认的节点图检查：
 
 ```bash
 python examples/monitor.py --namespace robot --inspect-only

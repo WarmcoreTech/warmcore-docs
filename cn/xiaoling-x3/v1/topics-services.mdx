@@ -3,7 +3,7 @@ title: "Topic 与 Service"
 description: "使用前先确认 X3 的 ROS 接口"
 ---
 
-> **开发者预览版／硬件尚未验证：** X3 硬件与已部署的机器人运行环境尚未完成验证。本机测试不能证明设备兼容性、实体行为或操作安全性。
+> **开发者预览版／硬件尚未验证：** X3 硬件与已部署的机器人运行环境尚未完成验证。本机测试不能证明设备兼容性、物理行为或操作安全性。
 
 ## 对话接口候选项目
 
@@ -14,7 +14,7 @@ SDK 预览版使用以下相对名称。Namespace 与 Remapping 会影响实际�
 | `dialog/text_input` | `std_msgs/msg/String` | 发布文本 |
 | `dialog/status` | `std_msgs/msg/String` | 订阅状态 |
 | `dialog/text_result` | `std_msgs/msg/String` | 订阅结果 |
-| `dialog/start_session` | `std_srvs/srv/Trigger` | 请求开始工作阶段 |
-| `dialog/stop_session` | `std_srvs/srv/Trigger` | 请求结束工作阶段 |
+| `dialog/start_session` | `std_srvs/srv/Trigger` | 请求开始会话 |
+| `dialog/stop_session` | `std_srvs/srv/Trigger` | 请求结束会话 |
 
 发布消息或调用 Service 可能改变机器人行为，须取得操作人员核准。名称与类型吻合，不代表消息已送达、QoS 正确、端点身分已确认或硬件运作正常。预览版客户端的状态订阅使用 Reliable、Transient Local 耐久性及深度 1。本文档不包含供应商消息定义。
