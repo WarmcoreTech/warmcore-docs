@@ -1,1 +1,16 @@
+---
+title: "Head, eyes, and mouth"
+description: "Physical control status"
+---
 
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+## Offline preparation and observation
+
+`MouthController.prepare(ratio)` validates a finite normalized ratio between `0` and `1` and prepares data offline. `HeadController.prepare_rpy(roll, pitch, yaw)` validates finite numeric inputs in radians and prepares data offline. These checks do not establish mechanical limits or safe poses.
+
+The controllers' `inspect(node)` methods examine the graph using a caller-owned ROS node; they do not command movement. `EyeController.inspect(node)` reports a candidate graph observation, not eye position.
+
+## Physical control
+
+Manual mouth and head writes raise `MotionUnavailableError`; eye motion has no manual SDK interface. Before any future physical control, device-specific limits, arbitration, stop behavior, and supervised hardware acceptance must be established. Do not infer safety from an absent competing node.
