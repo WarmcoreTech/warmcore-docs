@@ -1,0 +1,25 @@
+---
+title: "範例"
+description: "S100 SDK 的離線觸摸事件與節點圖範例"
+---
+
+> **開發者預覽版／硬體尚未驗證：** S100 的 ROS 整合與實體行為尚未在目標裝置驗證。本機測試及產品設定檔標籤不能證明硬體相容性。
+
+## 正規化模擬的臉部觸摸 Token
+
+此範例不會存取 ROS 或實際裝置：
+
+```python
+from xiaoling_s100 import Profile
+from xiaoling_s100.events import FaceTouchAdapter
+
+adapter = FaceTouchAdapter({"sample": "example"}, Profile.XIAOLING_ULTRA)
+event = adapter.normalize("sample")
+print(event.area, event.verified)
+```
+
+此對應表只是範例，並非已驗證的實際觸摸位置。若要執行完整的 Fixture 示範，請在已授權的 SDK 目錄執行 `python examples/offline_touch.py`。
+
+## 觀察目標節點圖
+
+請依照[快速入門](/zh-Hant/xiaoling-s100/v1/getting-started)執行操作人員核准的唯讀檢查。分享診斷輸出前，請先移除敏感資料。

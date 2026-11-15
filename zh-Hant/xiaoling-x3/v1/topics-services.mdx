@@ -1,0 +1,20 @@
+---
+title: "Topic 與 Service"
+description: "使用前先確認 X3 的 ROS 介面"
+---
+
+> **開發者預覽版／硬體尚未驗證：** X3 硬體與已部署的機器人執行環境尚未完成驗證。本機測試不能證明裝置相容性、實體行為或操作安全性。
+
+## 對話介面候選項目
+
+SDK 預覽版使用以下相對名稱。Namespace 與 Remapping 會影響實際解析名稱。使用前請在各部署環境確認實際 ROS 節點圖與型別。
+
+| 相對名稱 | ROS 型別 | 用戶端方向 |
+| --- | --- | --- |
+| `dialog/text_input` | `std_msgs/msg/String` | 發布文字 |
+| `dialog/status` | `std_msgs/msg/String` | 訂閱狀態 |
+| `dialog/text_result` | `std_msgs/msg/String` | 訂閱結果 |
+| `dialog/start_session` | `std_srvs/srv/Trigger` | 請求開始工作階段 |
+| `dialog/stop_session` | `std_srvs/srv/Trigger` | 請求結束工作階段 |
+
+發布訊息或呼叫 Service 可能改變機器人行為，須取得操作人員核准。名稱與型別吻合，不代表訊息已送達、QoS 正確、端點身分已確認或硬體運作正常。預覽版用戶端的狀態訂閱使用 Reliable、Transient Local 耐久性及深度 1。本文件不包含供應商訊息定義。

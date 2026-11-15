@@ -1,0 +1,19 @@
+---
+title: "ROS 2 Topic 與 Service"
+description: "確認 S100 SDK 所用的候選對話介面"
+---
+
+> **開發者預覽版／硬體尚未驗證：** S100 的 ROS 整合與實體行為尚未在目標裝置驗證。本機測試及產品設定檔標籤不能證明硬體相容性。
+
+預覽版可探索節點圖並使用相容的介面。以下對話相對名稱只是所選部署環境的候選項目；Namespace 和 Remapping 會影響實際名稱。
+
+| 相對名稱 | 標準 ROS 型別 | SDK 操作 |
+| --- | --- | --- |
+| `dialog/text_input` | `std_msgs/msg/String` | 發布文字 |
+| `dialog/text_result` | `std_msgs/msg/String` | 訂閱 |
+| `dialog/status` | `std_msgs/msg/String` | 訂閱 |
+| `dialog/start_session` | `std_srvs/srv/Trigger` | 請求 |
+| `dialog/stop_session` | `std_srvs/srv/Trigger` | 請求 |
+| `touch/event` | `std_msgs/msg/Int32` | 訂閱 |
+
+RF433 與 PCM 路由需要相容且獲授權的供應商型別支援。本網站不發布供應商訊息定義。端點吻合不能保證 QoS 相容性或訊息送達。發布文字或呼叫 Service 可能影響裝置，須經操作人員核准。

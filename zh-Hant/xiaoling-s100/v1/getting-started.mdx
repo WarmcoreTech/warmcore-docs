@@ -1,0 +1,20 @@
+---
+title: "快速入門"
+description: "開始使用 S100 SDK 的離線範例與 ROS 探索"
+---
+
+> **開發者預覽版／硬體尚未驗證：** S100 的 ROS 整合與實體行為尚未在目標裝置驗證。本機測試及產品設定檔標籤不能證明硬體相容性。
+
+請先取得已授權的 SDK 專案副本及適用的散布條款。使用 Python 3.10 環境並遵循[安裝說明](/zh-Hant/xiaoling-s100/v1/installation)。在 SDK 目錄執行離線 Fixture 範例：
+
+```bash
+python examples/offline_touch.py
+```
+
+此範例只處理模擬事件，不會存取 ROS、網路或裝置 I/O，不能驗證接收器或臉部觸摸硬體。在獲准的 ROS 環境，可執行操作人員確認的節點圖檢查：
+
+```bash
+python examples/monitor.py --namespace robot --inspect-only
+```
+
+請將 `robot` 換成部署使用的 Namespace；根 Namespace 則省略該選項。探索結果只是快照，不代表裝置已正常運作。

@@ -1,0 +1,29 @@
+---
+title: "Python API 參考"
+description: "X3 預覽版的 Python 介面與存取限制"
+---
+
+> **開發者預覽版／硬體尚未驗證：** X3 硬體與已部署的機器人執行環境尚未完成驗證。本機測試不能證明裝置相容性、實體行為或操作安全性。
+
+## `XiaolingClient`
+
+ROS 用戶端提供狀態及文字結果的 Callback。只有持續執行 ROS Node 的 Spin，Callback 才會被呼叫。以下唯讀範例會在本機印出資料；對話資料可能含個人資訊，未制定適當政策前，請勿寫入共用日誌。
+
+```python
+import rclpy
+from warmcore_xiaoling import XiaolingClient
+
+rclpy.init()
+node = XiaolingClient(on_status=print, on_text_result=print)
+try:
+    rclpy.spin(node)
+finally:
+    node.destroy_node()
+    rclpy.shutdown()
+```
+
+`namespace` 指定用戶端 Namespace，必須與部署環境中的名稱和 Remapping 相符。`send_text(text)` 會發布非空字串並立即返回，不會確認訊息送達。`text_subscriber_count()` 回報探索資訊，而非送達結果。`start_session(timeout_sec=5.0)` 及 `stop_session(timeout_sec=5.0)` 會等待 Service 並回傳非同步 Future。請維持 Node Spin、另設回應逾時並檢查回應。工作階段及文字操作可能影響機器人，須經操作人員核准。
+
+## 唯讀 WebSocket 用戶端
+
+`warmcore_xiaoling.rosbridge.XiaolingRosbridgeClient` 支援連線、訂閱對話狀態與文字結果事件、接收資料及關閉連線。用戶端白名單不能保護伺服器。實際部署的傳輸和事件仍未驗證。診斷流程請參閱[範例](/zh-Hant/xiaoling-x3/v1/examples)。

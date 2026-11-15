@@ -1,0 +1,16 @@
+---
+title: "ROS 2 Node 與 Package"
+description: "確認 S100 部署環境的 ROS 套件及節點"
+---
+
+> **開發者預覽版／硬體尚未驗證：** S100 的 ROS 整合與實體行為尚未在目標裝置驗證。本機測試及產品設定檔標籤不能證明硬體相容性。
+
+介面是否可用取決於已安裝的映像檔、啟動設定與連接的周邊設備。請向操作人員取得相容的 ROS 環境，並檢查實際節點圖：
+
+```bash
+ros2 node list
+ros2 topic list -t
+ros2 service list -t
+```
+
+SDK 的 Python 匯入名稱是 `xiaoling_s100`；ROS Package 與供應商型別支援由已授權環境提供。請將探索到的名稱、型別與目標設定比較。可執行檔、Package 或節點圖項目本身，都不能證明裝置正常運作或實體硬體已啟用。
