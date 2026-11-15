@@ -21,7 +21,11 @@
           },
           {
             "group": "Xiaoling X3 SDK",
-            "pages": []
+            "pages": [
+              "en/xiaoling-x3/v1/overview",
+              "en/xiaoling-x3/v1/quick-start",
+              "en/xiaoling-x3/v1/ros2-architecture"
+            ]
           },
           {
             "group": "Xiaoling S100 SDK",

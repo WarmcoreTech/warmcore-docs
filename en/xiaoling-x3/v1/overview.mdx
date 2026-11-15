@@ -1,0 +1,16 @@
+---
+title: "Xiaoling X3 SDK overview"
+description: "Scope and status of the developer preview"
+---
+
+> **Developer Preview / Hardware Not Yet Verified:** X3 hardware and the deployed robot runtime have not been validated. Local tests do not establish device compatibility, physical behavior, or safe operation.
+
+The Xiaoling X3 SDK version `0.6.0a1` is a Python developer preview targeting RDK X3 Head 2.0 V1.0.2. It helps developers inspect ROS 2 interfaces, observe dialog events through a rosbridge connection, and prototype text integrations. Access and redistribution terms must be agreed with Warmcore Tech.
+
+## What has been tested
+
+The ROS dialog client and graph diagnostics have unit-test coverage. Read-only WebSocket event handling and the text-model adapter also have local loopback coverage. These tests do not verify a deployed bridge, a live provider, or an X3 robot.
+
+## Boundaries
+
+Physical head, eye, and mouth commands are not implemented in the preview. Complete real-time voice replacement is not implemented. Start with [getting started](/en/xiaoling-x3/v1/quick-start) and check [release notes](/en/xiaoling-x3/v1/release-notes) before evaluating a release.
