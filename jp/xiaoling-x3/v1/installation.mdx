@@ -1,0 +1,24 @@
+---
+title: "インストール"
+description: "X3 SDK プレビューの入手と環境構築"
+---
+
+> **開発者向けプレビュー／ハードウェア未検証：** X3 ハードウェアおよび実機に展開されたロボットの実行環境は未検証です。ローカルテストだけでは、機器の互換性、物理的な動作、安全な運用を確認できません。
+
+## 必要条件
+
+Warmcore Tech から許可された SDK チェックアウトと配布条件を入手してください。開発用ワークステーションでは Python 3.8 以降を使用します。ROS 機能には、ロボットの ROS 環境に対応する Python を使用し、同じシェルでその環境を読み込んでください。ROS の依存関係は SDK インストーラーではなく、その環境から提供されます。担当者の承認なくロボットにソフトウェアをインストールしたり変更したりしないでください。
+
+## チェックアウトからインストールする
+
+対応する `setuptools` と `wheel` がインストール済みであることを確認して実行します。
+
+```bash
+python3 -m pip install --user --no-deps --no-build-isolation .
+python3 -c "import warmcore_xiaoling; import warmcore_xiaoling.llm; print('SDK import OK')"
+python3 -c "import rclpy; from std_msgs.msg import String; from std_srvs.srv import Trigger; print('ROS dialog imports OK')"
+```
+
+これらのオプションは依存パッケージの導入とビルド分離を無効にします。不足する前提パッケージは別途用意してください。インポートに成功しても、X3 実機との互換性を示すものではありません。試験的な音声機能には、適切な権限とバージョンが一致するベンダーのインターフェースパッケージが必要です。ロボットの既存パッケージを置き換えたり上書きしたりしないでください。
+
+オプションの WebSocket クライアントは、チェックアウト内で `python -m pip install ".[rosbridge]"` を実行して導入できます。追加の依存関係がダウンロードされる場合があります。組織が承認したパッケージポリシーに従い、[クイックスタート](/jp/xiaoling-x3/v1/quick-start)へ進んでください。

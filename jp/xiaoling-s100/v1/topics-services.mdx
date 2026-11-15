@@ -1,0 +1,19 @@
+---
+title: "ROS 2 トピックとサービス"
+description: "S100 SDK が利用する候補インターフェース"
+---
+
+> **開発者向けプレビュー／ハードウェア未検証：** S100 の ROS 統合と実機動作は対象機器で検証されていません。ローカルテストやプロファイル名だけでは、ハードウェアの互換性を確認できません。
+
+プレビューは ROS グラフの調査と互換インターフェースの利用に対応します。以下は対象環境で使われる可能性のある対話用の相対名です。名前空間やリマップによって解決後の名前は変わります。
+
+| 相対名 | 標準 ROS 型 | SDK の操作 |
+| --- | --- | --- |
+| `dialog/text_input` | `std_msgs/msg/String` | テキストをパブリッシュ |
+| `dialog/text_result` | `std_msgs/msg/String` | サブスクライブ |
+| `dialog/status` | `std_msgs/msg/String` | サブスクライブ |
+| `dialog/start_session` | `std_srvs/srv/Trigger` | 要求 |
+| `dialog/stop_session` | `std_srvs/srv/Trigger` | 要求 |
+| `touch/event` | `std_msgs/msg/Int32` | サブスクライブ |
+
+RF433 と PCM の経路には、互換性があり許可されたベンダー型サポートが必要です。ベンダーのメッセージ定義は本サイトでは公開しません。エンドポイントが一致しても QoS 互換性や到達は保証されません。テキストの送信やサービスの呼び出しは機器に影響する可能性があるため、担当者の承認が必要です。
